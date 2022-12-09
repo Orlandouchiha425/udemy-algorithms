@@ -55,4 +55,4 @@ function charCount1(str) {
     return obj
 }
 
-console.log(charCount1('Hhello my name is ORLANDO ! 123'))
+// console.log(charCount1('Hhello my name is ORLANDO ! 123'))

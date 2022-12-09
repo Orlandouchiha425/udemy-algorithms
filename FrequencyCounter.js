@@ -18,10 +18,10 @@ function same(arr1, arr2){
     
     for(let number of arr2){
         // frequencyCounter2[number] = (frequencyCounter2[number] || 0) + 1
-        if(frequencyCounter1[number]){
-            frequencyCounter1[number] += 1;
+        if(frequencyCounter2[number]){
+            frequencyCounter2[number] += 1;
          } else {
-            frequencyCounter1[number] = 1;
+            frequencyCounter2[number] = 1;
          }          
     }
     console.log(frequencyCounter1);
@@ -37,7 +37,7 @@ function same(arr1, arr2){
     return true
 }
 
-console.log(same([1,2,3,2,5], [9,1,4,4,11]))
+console.log(same([1,2,3,2,5], [1,4,9,4,25]))
 
 
 // Line 10-12 it really just translates to the following
