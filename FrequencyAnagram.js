@@ -118,5 +118,28 @@ function validAnagram(first, second) {
     }
   
 
-    console.log(anagram2('racecars', 'carrace'))
-    console.log(anagram2('abc','acd'))
+    // console.log(anagram2('racecars', 'carrace'))
+    // console.log(anagram2('abc','acd'))
+
+    function validanagramtest(first, second) {
+      if(first.length !== second.length){
+        return false
+      }
+      lookup={}
+      for(let i=0; i<first.length; i++){
+        letter=first[i]
+        lookup[letter] ? lookup[letter]++ : lookup[letter] =1
+      }
+
+      for (let j = 0; j < second.length; j++) {
+        letter = second[j];
+        if (!lookup[letter]) {
+          false
+        }else{
+          lookup[letter] -=1
+        }
+        
+      }
+      return true
+    }
+    console.log(validanagramtest('racecar', 'carrace'))
