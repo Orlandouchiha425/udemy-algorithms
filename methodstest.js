@@ -33,7 +33,13 @@ function miniMaxSum(arr) {
 let min =0
 let max=0
 for(let i=0; i< totalArr.length-1; i++){
-    console.log(totalArr[i])
+     min +=totalArr[i]
 }
+for(let i=1; i< totalArr.length; i++){
+    max +=totalArr[i]
+}
+console.log(min + " " + max)
  }
- console.log(miniMaxSum([1,8,6,7]))
+ console.log(miniMaxSum([1,3,5,7,9]))
+
+
