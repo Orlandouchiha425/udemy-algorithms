@@ -52,3 +52,67 @@ function anagramsTest(str,str2) {
 }
 
 console.log(anagramsTest('carrace','racecar'))
+
+
+
+function sameFrequency1(str1,str2){
+    if (str1.length !== str2.length) {
+        return false
+    }
+    // good luck. Add any arguments you deem necessary.
+ let lookup={}
+
+ for(let i=0;i<str1.length;i++){
+   element= str1[i]
+     if(lookup[element]){
+         lookup[element]+=1
+     }else{
+        lookup[element] = 1
+    }
+ }
+ console.log(lookup)
+ for (let i = 0; i < str2.length; i++) {
+    const element = str2[i];
+    if(!lookup[element]){
+        return false
+    }
+    else{
+        lookup[element] -=1
+    }
+   
+    
+ }
+
+//  return `this is a test ${lookup}`
+return true
+
+    }
+
+    // console.log(sameFrequency1(123456, 123456789))
+
+
+    function sameFrequencyNums(num1, num2) {
+        let num1_dict = {};
+        let num2_dict = {};
+        for (let i of num1.toString()) {
+            if (num1_dict[i]) {
+                num1_dict[i] += 1;
+            } else {
+                num1_dict[i] = 1;
+            }
+        }
+        for (let i of num2.toString()) {
+            if (num2_dict[i]) {
+                num2_dict[i] += 1;
+            } else {
+                num2_dict[i] = 1;
+            }
+        }
+        for (let key in num1_dict) {
+            if (num1_dict[key] !== num2_dict[key]) {
+                return false;
+            }
+        }
+        return true;
+    }
+console.log(sameFrequencyNums(123456,132457))

@@ -30,16 +30,15 @@ function miniMaxSum(arr) {
     totalArr= arr.sort(function(a,b){
         return a-b
     })
-let min =0
-let max=0
-for(let i=0; i< totalArr.length-1; i++){
-     min +=totalArr[i]
-}
-for(let i=1; i< totalArr.length; i++){
-    max +=totalArr[i]
-}
-console.log(min + " " + max)
+return totalArr
+// for(let i=0; i< totalArr.length-1; i++){
+//      min +=totalArr[i]
+// }
+// for(let i=1; i< totalArr.length; i++){
+//     max +=totalArr[i]
+// }
+// console.log(min + " " + max)
  }
- console.log(miniMaxSum([1,3,5,7,9]))
+ console.log(miniMaxSum([1,3,5,7,9,2]))
 
 
