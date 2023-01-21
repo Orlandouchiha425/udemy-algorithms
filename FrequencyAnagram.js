@@ -126,7 +126,7 @@ function validAnagram(first, second) {
         return false
       }
       lookup={}
-      for(let i=0; i<first.length; i++){
+      for(let i=0; i <first.length; i++){
         letter=first[i]
         lookup[letter] ? lookup[letter]++ : lookup[letter] =1
       }
@@ -143,3 +143,38 @@ function validAnagram(first, second) {
       return true
     }
     console.log(validanagramtest('racecar', 'carrace'))
+
+
+
+    function hashPractice(string1, string2) {
+      // if(string1.length !== string2.length){ return false}
+      let lookup= {}
+
+      for(let i=0; i < string1.length; i++){
+        element = string1[i]
+        if (lookup[element]) {
+           lookup[element]++
+        }
+        else if (!lookup[element]){
+          lookup[element] = 1
+        }
+      
+        // console.log(`this is index ${element}`)
+
+      }
+     for (let i = 0; i < string2.length; i++) {
+      let element =  string2[i];
+      if (!lookup[element] ) {
+        return false
+      }
+      if (lookup[element]) {
+        lookup[element] -=1
+      }
+      
+     }
+    return true
+
+    }
+
+
+console.log(hashPractice('racecar', 'carraces'))

@@ -40,19 +40,27 @@
 
 
 
-function divideAndConquear1(arr) {
+function divideAndConquear1(arr, num) {
     let leftPointer=0;
     let rightPointer= arr.length -1
 
-    arr.sort(function(a,b){
+    let sortedArr = arr.sort(function(a,b){
         return a-b
     })
-for (let i = 0; i < arr.length; i++) {
-    const element = arr[i];
-       let middleNum = Math.floor((leftPointer + rightPointer) /2 )
-       console.log(`this is a test ${middleNum}`)
+    console.log(sortedArr)
+for (let i = 0; i <= sortedArr.length; i++) {
+        middleNum = Math.floor((leftPointer + rightPointer) /2 )
+      if (sortedArr[middleNum] < num) {
+        leftPointer = middleNum +1
+      }else if(sortedArr[middleNum] > num){
+        rightPointer = middleNum - 1
+      }
+      else{ 
+        return `This is the middle ${middleNum}`}
     
 }
+return  -1
 }
 
-console.log(divideAndConquear1([12,6,2,8,10,4]))
+
+console.log(divideAndConquear1([1,7,3,4,8,6,5],3))
