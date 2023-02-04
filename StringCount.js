@@ -16,43 +16,44 @@ const StringCount =(str) =>{
  return result
 }
 
-console.log(StringCount('Hhello'))
-// charCount("aaa")//{a:4}
-// charCount("hello") //{h:1, e:1, l:2,o:1}
+// console.log(StringCount('Hhello'))
+// // charCount("aaa")//{a:4}
+// // charCount("hello") //{h:1, e:1, l:2,o:1}
 
-//make over to return string
+// //make over to return string
 
-function charCount(str) {
-    let obj={}
-    for (let i = 0; i < str.length; i++) {
-        let char = str[i].toLowerCase()
-        if(/[a-z0-9]/.test(char)){
-            if(obj[char]>0){
-                obj[char]++
-            }else{
-                obj[char]=1
-            }
-        }
+// function charCount(str) {
+//     let obj={}
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i].toLowerCase()
+//         if(/[a-z0-9]/.test(char)){
+//             if(obj[char]>0){
+//                 obj[char]++
+//             }else{
+//                 obj[char]=1
+//             }
+//         }
         
-    }
-    return obj
-}
+//     }
+//     return obj
+// }
 
 
-function charCount1(str) {
-    let obj={}
-    for (let char of str) {
-         char = char.toLowerCase()
-        if(/[a-z0-9]/.test(char)){
-            if(obj[char]>0){
-                obj[char]++
-            }else{
-                obj[char]=1
-            }
-        }
+// function charCount1(str) {
+//     let obj={}
+//     for (let char of str) {
+//          char = char.toLowerCase()
+//         if(/[a-z0-9]/.test(char)){
+//             if(obj[char]>0){
+//                 obj[char]++
+//             }else{
+//                 obj[char]=1
+//             }
+//         }
         
-    }
-    return obj
-}
+//     }
+//     return obj
+// }
 
 // console.log(charCount1('Hhello my name is ORLANDO ! 123'))
+console.log(StringCount("hello my name"))

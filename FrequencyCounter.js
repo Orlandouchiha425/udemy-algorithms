@@ -1,43 +1,43 @@
 ///this is to compare data and see if they are the same or anagrams of one another
 //similar values if value is contain of one another, of two or more data/array
 // Example Same and Same2 we are just checking if is an anagram SQUARED of arr1
-function same(arr1, arr2){
-    if(arr1.length !== arr2.length){
-        return false;
-    }
-    let frequencyCounter1 = {}
-    let frequencyCounter2 = {}
-    for(let number of arr1){
-        // frequencyCounter1[number] = (frequencyCounter1[number] || 0) + 1
-        if(frequencyCounter1[number]){
-            frequencyCounter1[number] += 1;
-         } else {
-            frequencyCounter1[number] = 1;
-         }    
-        }
+// function same(arr1, arr2){
+//     if(arr1.length !== arr2.length){
+//         return false;
+//     }
+//     let frequencyCounter1 = {}
+//     let frequencyCounter2 = {}
+//     for(let number of arr1){
+//         // frequencyCounter1[number] = (frequencyCounter1[number] || 0) + 1
+//         if(frequencyCounter1[number]){
+//             frequencyCounter1[number] += 1;
+//          } else {
+//             frequencyCounter1[number] = 1;
+//          }    
+//         }
     
-    for(let number of arr2){
-        // frequencyCounter2[number] = (frequencyCounter2[number] || 0) + 1
-        if(frequencyCounter2[number]){
-            frequencyCounter2[number] += 1;
-         } else {
-            frequencyCounter2[number] = 1;
-         }          
-    }
-    console.log(frequencyCounter1);
-    console.log(frequencyCounter2);
-    for(let key in frequencyCounter1){
-        if(!(key ** 2 in frequencyCounter2)){
-            return false
-        }
-        if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
-            return false
-        }
-    }
-    return true
-}
+//     for(let number of arr2){
+//         // frequencyCounter2[number] = (frequencyCounter2[number] || 0) + 1
+//         if(frequencyCounter2[number]){
+//             frequencyCounter2[number] += 1;
+//          } else {
+//             frequencyCounter2[number] = 1;
+//          }          
+//     }
+//     console.log(frequencyCounter1);
+//     console.log(frequencyCounter2);
+//     for(let key in frequencyCounter1){
+//         if(!(key ** 2 in frequencyCounter2)){
+//             return false
+//         }
+//         if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
+//             return false
+//         }
+//     }
+//     return true
+// }
 
-console.log(same([1,2,3,2,5], [1,4,9,4,25]))
+// console.log(same([1,2,3,2,5], [1,4,9,4,25]))
 
 
 // Line 10-12 it really just translates to the following
@@ -129,3 +129,28 @@ console.log(same([1,2,3,2,5], [1,4,9,4,25]))
 
 // console.log(sameFrequency([1,2,3], [4,1,9])) // true)
 // console.log(sameFrequency([1,2,3], [1,9])) // false
+
+function frequencyTest(string1, string2) {
+    let emptyObj={}
+    if (string1.length !==string2.length) {
+        return `is not a anagram so is ${false}`
+    }
+    for (let i = 0; i < string1.length; i++) {
+        const element = string1[i];
+        if (emptyObj[element]) {
+            emptyObj[element]++
+        }else{
+            emptyObj[element]=1
+        }
+    }
+    for (let i = 0; i < string2.length; i++) {
+        const element = string2[i];
+        if (!emptyObj[element]) {
+            return false
+        }
+        else{emptyObj[element] -=1}
+    }
+    return true
+}
+console.log(frequencyTest('racecar', "carraecs"))
+console.log(frequencyTest([1,2,3],[2,3,16]))

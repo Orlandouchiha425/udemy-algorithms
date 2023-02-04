@@ -4,7 +4,7 @@ function linearSearch(arr,val) {
     for (let i = 0; i < arr.length; i++) {
         let element=arr[i]
          if (element===val) {
-            return i
+            return arr[i]
         }
     } 
     return -1
