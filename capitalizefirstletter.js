@@ -6,7 +6,7 @@ const capitalizeFirstCharacter=(title)=>{
    }
    const str2 = arr.join(' ')
    return str2
-   
+   // console.log(arr)
 }
 
 // let string1= title[0].toUpperCase()
@@ -23,3 +23,4 @@ console.log(capitalizeFirstCharacter('apex is cool'))
 //    let str2= str.join(' ')
 //    return str2
 //  }
+

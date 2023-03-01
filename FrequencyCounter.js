@@ -152,5 +152,5 @@ function frequencyTest(string1, string2) {
     }
     return true
 }
-console.log(frequencyTest('racecar', "carraecs"))
-console.log(frequencyTest([1,2,3],[2,3,16]))
+console.log(frequencyTest('racecar', "carraec"))
+// console.log(frequencyTest([1,2,3],[2,3,16]))
