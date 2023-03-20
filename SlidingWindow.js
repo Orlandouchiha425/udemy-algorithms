@@ -1,24 +1,24 @@
 // // //Naive approach-dont use this
 
-function maxSubarraySum(arr, num) {
-    if ( num > arr.length){
-      return null;
-    }
-    var max = -Infinity;
-    for (let i = 0; i < arr.length - num + 1; i ++){
-      temp = 0;
-      for (let j = 0; j < num; j++){
-        temp += arr[i + j];
-      }
-      if (temp > max) {
-        max = temp;
-      }
-      console.log(temp,max)
-    }
-    return max;
-  }
+// function maxSubarraySum(arr, num) {
+//     if ( num > arr.length){
+//       return null;
+//     }
+//     var max = -Infinity;
+//     for (let i = 0; i < arr.length - num + 1; i ++){
+//       temp = 0;
+//       for (let j = 0; j < num; j++){
+//         temp += arr[i + j];
+//       }
+//       if (temp > max) {
+//         max = temp;
+//       }
+//       console.log(temp,max)
+//     }
+//     return max;
+//   }
   
-  maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+//   maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
 
 
 //   //SLIDING WINDOW Approach
@@ -28,7 +28,7 @@ function maxSubarraySum(arr, num) {
 
 //Problem: create a function where
 
-  function maxSubarraySum(arr, num){
+  function maxSubarraySum1(arr, num){
     let maxSum = 0;
     let tempSum = 0;
     //this if just says if nums/ the array is less than the nums we just return null 
@@ -38,6 +38,7 @@ function maxSubarraySum(arr, num) {
     for (let i = 0; i < num; i++) {
       //maxSum adds all nums  as long as is less than NUM per our for loop
       maxSum += arr[i];
+      console.log(`this is a test  of max sum ${maxSum}`)
     }
     //tempsum becomes max sum
     tempSum = maxSum;
@@ -52,13 +53,13 @@ function maxSubarraySum(arr, num) {
     }
     return maxSum;
   }
-  
+  console.log(maxSubarraySum1([2,6,9,2,1,8,5,6,3],3))
   
 // sliding windows consists of the following
 // create a function that adds the num numbers in the array together and returns the longest number by adding them
 
 
-function maxSubarraySum(arr, num) { 
+function maxSubarraySum2(arr, num) { 
  
   if (arr.length < num) return null;
  
@@ -85,9 +86,14 @@ function maxSubarraySum(arr, num) {
   return maxSum; 
 }
 
-console.log(maxSubarraySum([2,6,9,2,1,8,5,6,3],3))
+// console.log(maxSubarraySum2([2,6,9,2,1,8,5,6,3],3))
 
-function maxSubarraySum(arr, num){
+//Write a function called maxSubarraysum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n.
+//consecutive elements in the array.
+// maxSubarraySum([1,2,5,2,8,1,5],2) answer: 10 because the largest 2 consecutive numbers is 8+2
+// maxSubarraySum([1,2,5,2,8,1,5],4) answer: 17
+
+function maxSubarraySum3(arr, num){
 
   let maxSum = 0;
   let tempSum = 0;
@@ -107,8 +113,11 @@ function maxSubarraySum(arr, num){
   return maxSum;
 }
 
-maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+// maxSubarraySum3([2,6,9,2,1,8,5,6,3],3)
 
 // arr[i-num] means , we started at num the loop , we havent done any increases yet, but we do arr[i] 
 //or index 3 or better described to arr[2] then negative - num,
 // im assuming that means we go back  3 indexes and thats also a 2, so we subtract those arr[2 -2]  + arr[i] arr[2]
+
+
+

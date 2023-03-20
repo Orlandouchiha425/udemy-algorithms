@@ -142,6 +142,7 @@ function frequencyTest(string1, string2) {
         }else{
             emptyObj[element]=1
         }
+        console.log(emptyObj)
     }
     for (let i = 0; i < string2.length; i++) {
         const element = string2[i];
