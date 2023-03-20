@@ -118,6 +118,3 @@ function maxSubarraySum3(arr, num){
 // arr[i-num] means , we started at num the loop , we havent done any increases yet, but we do arr[i] 
 //or index 3 or better described to arr[2] then negative - num,
 // im assuming that means we go back  3 indexes and thats also a 2, so we subtract those arr[2 -2]  + arr[i] arr[2]
-
-
-
