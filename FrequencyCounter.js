@@ -13,16 +13,16 @@
 //             frequencyCounter1[number] += 1;
 //          } else {
 //             frequencyCounter1[number] = 1;
-//          }    
+//          }
 //         }
-    
+
 //     for(let number of arr2){
 //         // frequencyCounter2[number] = (frequencyCounter2[number] || 0) + 1
 //         if(frequencyCounter2[number]){
 //             frequencyCounter2[number] += 1;
 //          } else {
 //             frequencyCounter2[number] = 1;
-//          }          
+//          }
 //     }
 //     console.log(frequencyCounter1);
 //     console.log(frequencyCounter2);
@@ -39,7 +39,6 @@
 
 // console.log(same([1,2,3,2,5], [1,4,9,4,25]))
 
-
 // Line 10-12 it really just translates to the following
 
 // if(frequencyCounter1[val]){
@@ -47,10 +46,6 @@
 //  } else {
 //     frequencyCounter1[val] = 1;
 //  }
-
-
-
-
 
 // function same2(arr1, arr2){
 //     if(arr1.length !== arr2.length){
@@ -68,9 +63,6 @@
 // }
 
 // same2([1,2,3,2], [9,1,4,4])
-
-
-
 
 // const sameFrequency = (arr1, arr2) => {
 //     if(arr1.length !== arr2.length){
@@ -93,7 +85,6 @@
 //     console.log(counter1)
 //   }
 
-
 // const sameFrequency2 = (arr1, arr2) => {
 //     if(arr1.length !== arr2.length){
 //       return false
@@ -107,7 +98,7 @@
 //         counter1[num] = 1
 //       }
 //     }
-  
+
 //     for(let num of arr2){
 //       if(counter2[num]){
 //         counter2[num]++
@@ -115,7 +106,7 @@
 //         counter2[num] = 1
 //       }
 //     }
-  
+
 //     for(let key in counter1 ){
 //       console.log(`key is ${key} which is equal to ${counter1[key]} `,`the corresponding squared key is ${key ** 2} which is ${counter2[key ** 2]}`)
 //       if(counter1[key] !== counter2[key ** 2]){
@@ -124,34 +115,33 @@
 //     }
 //     return true
 //   }
-  
-
 
 // console.log(sameFrequency([1,2,3], [4,1,9])) // true)
 // console.log(sameFrequency([1,2,3], [1,9])) // false
 
 function frequencyTest(string1, string2) {
-    let emptyObj={}
-    if (string1.length !==string2.length) {
-        return `is not a anagram so is ${false}`
+  let emptyObj = {};
+  if (string1.length !== string2.length) {
+    return `is not a anagram so is ${false}`;
+  }
+  for (let i = 0; i < string1.length; i++) {
+    const element = string1[i];
+    if (emptyObj[element]) {
+      emptyObj[element]++;
+    } else {
+      emptyObj[element] = 1;
     }
-    for (let i = 0; i < string1.length; i++) {
-        const element = string1[i];
-        if (emptyObj[element]) {
-            emptyObj[element]++
-        }else{
-            emptyObj[element]=1
-        }
-        console.log(emptyObj)
+    console.log(emptyObj);
+  }
+  for (let i = 0; i < string2.length; i++) {
+    const element = string2[i];
+    if (!emptyObj[element]) {
+      return false;
+    } else {
+      emptyObj[element] -= 1;
     }
-    for (let i = 0; i < string2.length; i++) {
-        const element = string2[i];
-        if (!emptyObj[element]) {
-            return false
-        }
-        else{emptyObj[element] -=1}
-    }
-    return true
+  }
+  return true;
 }
-console.log(frequencyTest('racecar', "carraec"))
+console.log(frequencyTest("racecar", "carraec"));
 // console.log(frequencyTest([1,2,3],[2,3,16]))

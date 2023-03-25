@@ -1,19 +1,17 @@
-const capitalizeFirstCharacter=(title)=>{
-    arr = title.split(' ')
-   for (let i = 0; i < arr.length; i++) {
-      arr[i] = arr[i].charAt(0).toUpperCase()+ arr[i].substring(1)
-    
-   }
-   const str2 = arr.join(' ')
-   return str2
-   // console.log(arr)
-}
+const capitalizeFirstCharacter = (title) => {
+  arr = title.split(" ");
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+  }
+  const str2 = arr.join(" ");
+  return str2;
+  // console.log(arr)
+};
 
 // let string1= title[0].toUpperCase()
 // let string2= title.substring(1)
 // return string1.concat(string2)
-console.log(capitalizeFirstCharacter('apex is cool'))
-
+console.log(capitalizeFirstCharacter("apex is cool"));
 
 // const capitalizeFirstCharacter=(title)=>{
 //     let str = title.split(' ')
@@ -23,4 +21,3 @@ console.log(capitalizeFirstCharacter('apex is cool'))
 //    let str2= str.join(' ')
 //    return str2
 //  }
-
